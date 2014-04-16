@@ -1,0 +1,32 @@
+﻿<%@ Master Language="VB" %>
+
+<!DOCTYPE html>
+
+<%@ Import Namespace="System.Data.SqlClient" %>
+
+<script runat="server">
+    Sub Page_Load()
+        Dim conn As SqlConnection = New SqlConnection
+        conn.ConnectionString = "Server=./SQLExpress; Database = App_Data/data.mdf;"
+        conn.Open()
+        Dim create As New SqlCommand
+        create.CommandText = "create if not exists table shtuff(name string, data string);"
+        create.ExecuteNonQuery()
+        conn.Close()
+    End Sub
+</script>
+
+<html>
+    <head id="head" runat="server">
+        <title></title>
+        <link href="basic.css" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <form id="form1" runat="server">
+            <div id="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            </div>
+        </form>
+    </body>
+</html>
