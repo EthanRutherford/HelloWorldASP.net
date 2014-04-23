@@ -20,6 +20,6 @@ namespace WebApplication2
             sql.send("Insert stuff (name, description) values ('" + txt1.Text + "', '" + txt2.Text + "');");
             sql.read("select * from stuff", things);
         }
-        SQL sql = new SQL();
+        SQL sql = new SQL("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\data.mdf;Integrated Security=True;User Instance=True");
     }
 }

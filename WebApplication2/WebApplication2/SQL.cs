@@ -11,9 +11,9 @@ namespace WebApplication2
 {
     public class SQL
     {
-        public SQL()
+        public SQL(String source)
         {
-            conn.ConnectionString = "Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\data.mdf;Integrated Security=True;User Instance=True";
+            conn.ConnectionString = source;
         }
         public void send(String instr)
         {
