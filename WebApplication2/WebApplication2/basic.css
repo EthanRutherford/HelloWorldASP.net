@@ -3,18 +3,37 @@
     font: "Trebuchet MS", Verdana, sans-serif;
     background-color: #5c87b2;
     color: #696969;
-    }
+}
 
-    #main
-    {
+#main
+{
     padding: 30px;
     background-color: #ffffff;
     border-width: 0 0 4px 4px;
-    }
+}
 
-    h1
-    {
+inv
+{
+    background-color: #ffffff;
+    color: #ffffff;
+}
+
+h1
+{
     font: Georgia, serif;
     border-bottom: 3px solid #cc9900;
     color: #996600;
 }
+
+#column1
+{
+	float:left;
+	width: 50%;
+}
+
+#column2
+{
+	float:left;
+	width: 50%;
+}
+

@@ -9,26 +9,31 @@
         <asp:TextBox id="txt2" runat="server" />
         <asp:Button ID="Button1" OnClick="submit" Text="Submit" runat="server" />
         <p>
+            Or type a thing to delete:
+            <asp:TextBox ID="txt3" runat="server"/>
+            <asp:Button ID="Button2" OnClick="delete" Text="Delete" runat="server" />
+            <asp:Button ID="Button3" OnClick="clear" Text="Delete All" runat="server" />
+        </p>
         <asp:Repeater id="things" runat="server">
         <HeaderTemplate>
-            <table border="1" width="100%">
-            <tr bgcolor="#b0c4de">
-                <th>Name</th>
-                <th>Description</th>
-            </tr>
+            <div id = "column1">
+                Name
+            </div>
+            <div id = "column2">
+                Description
+            </div>
         </HeaderTemplate>
         <ItemTemplate>
-            <tr bgcolor="#f0f0f0">
-                <td><%# Eval("name") %></td>
-                <td><%# Eval("description") %></td>
-            </tr>
+            <div id = "column1">
+                <%# Eval("name") %></td>
+            </div>
+            <div id = "column2">
+                <td><%# Eval("description") %>
+            </div>
         </ItemTemplate>
-
         <FooterTemplate>
-            </table>
+            <inv>-</inv>        <!-- invisible text so html knows where to put the bottom of the page -->
         </FooterTemplate>
-
         </asp:Repeater>
-        </p>
     </center>
 </asp:Content>

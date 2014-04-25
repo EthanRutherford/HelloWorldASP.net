@@ -17,7 +17,17 @@ namespace WebApplication2
         }
         protected void submit(object sender, EventArgs e)
         {
-            sql.send("Insert stuff (name, description) values ('" + txt1.Text + "', '" + txt2.Text + "');");
+            sql.send("insert stuff (name, description) values ('" + txt1.Text + "', '" + txt2.Text + "');");
+            sql.read("select * from stuff", things);
+        }
+        protected void delete(object sender, EventArgs e)
+        {
+            sql.send("delete from stuff where name = '" + txt3.Text + "';");
+            sql.read("select * from stuff", things);
+        }
+        protected void clear(object sender, EventArgs e)
+        {
+            sql.send("delete from stuff;");
             sql.read("select * from stuff", things);
         }
         SQL sql = new SQL("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\data.mdf;Integrated Security=True;User Instance=True");
